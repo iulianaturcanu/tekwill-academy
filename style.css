@@ -1,0 +1,93 @@
+body {
+  background-color: gray;
+}
+
+.main-header {
+  /* Centreaza elementele la mijlloc pe verticala si orizontala */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  height: auto;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.main-nav {
+  margin: 2em;
+  padding: 1em;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav-link:link {
+  text-decoration: none;
+}
+
+.main-nav-link {
+  color: #fff;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 2rem;
+}
+
+.cta-buttons button {
+  width: 185px;
+  height: 48px;
+  border-radius: 36px;
+  color: #fff;
+}
+
+.cta-buttons button:first-child {
+  background-color: #FFA62B;
+  border: 1px solid #FFA62B;
+}
+
+.cta-buttons button:last-child {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+}
+
+.containers {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  grid-template-rows: repeat(2, 200px);
+  gap: 32px;
+}
+
+/* min-width 1024+ */
+@media only screen and (min-width: 1024px) {
+  .containers {
+    gap: 80px;
+  }
+}
+
+/* marimea este de 368px sau mai putin */
+/* max-width: 0 - 368px */
+@media only screen and (max-width: 368px) {
+  .containers {
+    grid-template-columns: 320px;
+    grid-template-rows: repeat(6, 200px);
+  }
+}
+
+.containers div {
+  background-color: #fff;
+}
+
+.values-section {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  align-content: end;
+}
+
