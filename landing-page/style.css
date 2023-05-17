@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #FFA62B;
+  --dark-barckground-color: #252B42;
+  --light-text-color: #FFFFFF;
+}
+
 body {
   background-color: gray;
 }
@@ -32,30 +38,6 @@ body {
   color: #fff;
 }
 
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 2rem;
-}
-
-.cta-buttons button {
-  width: 185px;
-  height: 48px;
-  border-radius: 36px;
-  color: #fff;
-}
-
-.cta-buttons button:first-child {
-  background-color: #FFA62B;
-  border: 1px solid #FFA62B;
-}
-
-.cta-buttons button:last-child {
-  background: transparent;
-  border: 1px solid #FFFFFF;
-}
-
 .containers {
   display: grid;
   grid-template-columns: repeat(3, 320px);
@@ -84,16 +66,103 @@ body {
 }
 
 .values-section {
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 100px 0;
   display: grid;
   justify-content: center;
   align-content: end;
 }
 
+.values-section h2,
+.values-section p {
+  text-align: center;
+  color: var(--light-text-color);
+}
 
-@media (min-width: 768px) {
-    /* styles */
+.values-section h2 {
+  font-size: 40px;
+}
+
+.values-text {
+  max-width: 472px;
+  margin: 45px auto;
+}
+
+.main-content {
+    color: var(--light-text-color);
+    padding: 40px 140px;
+    gap: 40px;
+    max-width: 572px;
+    margin: 0 auto;
+}
+
+.main-content .heading-primary {
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.main-content h4 {
+  margin: 40px 0;
+  text-align: center;
 }
 
 
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cta-buttons button {
+  width: 185px;
+  height: 48px;
+  border-radius: 36px;
+  color: #fff;
+}
+
+.cta-buttons button:first-child {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.cta-buttons button:last-child {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+}
+
+/* .animated-box {
+  animation-name: animate1;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  width: 320px;
+  height: 100px;
+}  */
+/* 
+@keyframes animate1 {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+  75% {
+    background-color: green;
+  }
+  100% {
+    background-color: white;
+  }
+} */
+
+
+/* .cta-buttons .animated-button { */
+  /* transition-property: background;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out; */
+  /* transition: all 2s ease-in-out; */
+
+  /* transform: scale(1.5); */
+/* } */
+/* 
+.cta-buttons .animated-button:hover {
+  transform: rotate(180deg);
+} */
