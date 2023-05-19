@@ -1,0 +1,96 @@
+.menu-wrap {
+  margin: 2em;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.menu-wrap .menu ul {
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    opacity: 0;
+}
+
+.main-nav-link:link {
+  text-decoration: none;
+}
+
+.main-nav-link {
+  color: #fff;
+}
+
+.menu-wrap .toggle {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Second line from hamburger menu */
+.menu-wrap .hamburger div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* First and third line from hamburger menu */
+.menu-wrap .hamburger div::before,
+.menu-wrap .hamburger div::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+
+.menu-wrap .hamburger div::after {
+    top: 10px;
+}
+
+/* Hamburger menu animation */
+.menu-wrap .toggle:checked + .hamburger div::before,
+.menu-wrap .toggle:checked + .hamburger div::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+
+.menu-wrap .toggle:checked ~ .menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggle:checked ~ .menu ul {
+    opacity: 1;
+}
