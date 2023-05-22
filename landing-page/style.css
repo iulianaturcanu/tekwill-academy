@@ -47,6 +47,13 @@ body {
   display: grid;
   justify-content: center;
   align-content: end;
+  background: linear-gradient(
+    to bottom, 
+    blue 0%,
+    blue 50%,
+    green 50%,
+    green 100%
+  )
 }
 
 .values-section h2,
