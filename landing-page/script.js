@@ -1,161 +1,179 @@
-/* // variable - firstName, valoare - 'Anna'
-// atribuit valoarea Anna catre variabila firstName
-let firstName = 'Anna';
-// console.log(firstName);
+// const now = 2023;
+// console.log(now - 1990 > now - 2016);
 
-// camelCase - firstNamePerson
-// firstName = 'Bob';
+// 1. now - 1990 // 33;
+// 2. now - 2016 // 7;
+// 3. 33 > 7 // true;
 
-// Variabilele nu se pot incepe cu cifre
-let years = 3;
+// Operator Precendence - cu cat e mai mare valoare, 
+// cu atat e mai importanta opertiunea
 
-// Ce se poate contine in variabile:
-// - litere
-// - cifre
-// - simbolul dolarului $
-// - simbolul underscore _
+// let z , y;
 
-let first_name = 'Anna';
-// console.log(first_name);
- 
-let ana_bob = 'Ana si Bob';
+// assignment right to left
+// z = y = 25 - 10 - 5;
+// z = y = 10;
+// console.log(z, y); // 10 10
 
-// Constantele fixe - se scriu cu majuscule (uppercase)
-// UPPER_SNAKE_CASE
-let MAX_WIDTH = 100;
-let DAYS_UNTIL_TOMMOROW = 1;
+// left-to-right
+// 25 - 10 - 5;
+//10;
 
-// Reserverd keywords - cuvinte rezervate - 
-// nu pot fi folosite ca nume de variabile
-// let new = 'new';
+// const ageA = 30;
+// const ageB = 40;
+// const averageAge = (ageA + ageB) / 2;
+// 30 + 40 / 2 = 30 + 20 = 50
+// 70 / 2 = 35
 
-// Primitive Data Types
-// string - sir de caractere (text), "", '', ``
-let message = 'Hello World!';
-let message2 = "Hello World!";
-let message3 = `${message2} said Anna.`; 
-// number - numere intregi, zecimale, negative, pozitive
-let age = 30;
-// console.log(age);
-// boolean - true, false (valori logice)
-let isOnline = true;
-// console.log(isOnline);
-// undefined - valoarea unei variabile care nu a fost definita
-// valoarea variabilei este goala
-let nameOfUser;
-// console.log(nameOfUser);
-// null - valoarea unei variabile care a fost definita
-let nameOfUser2 = null;
+// If/else
 
-// typeof - returnarea tipului de date a unei variabile
-console.log(typeof message);
-console.log(typeof age);
-console.log(typeof isOnline);
-console.log(typeof nameOfUser);
-// javascript bug - typeof null returneaza 'object'
-console.log(typeof nameOfUser2); */
+// Program pentru verificarea varstei de vot
 
-// Dynamic Typing - schimba tipizarea la variabila
-// variabilele - nu pot avea type, type este la valoare
-/* let nameOfUser = 'Anna';
-console.log(typeof nameOfUser);
-
-nameOfUser = 30;
-console.log(typeof nameOfUser);
-
-// Reassign 
-let age = 30;
-
-age = 31;
-
-let message = null;
-
-if (message === null) {
-    // logica
-    console.log('Message is null');
-} else {
-    console.log('Message is not null');
-}
-
-if (message === null) console.log('Message is null');
-else console.log('Message is not null');
-
-// var, let, const 
-// var - variabila mai veche si nu prea este folosita
-// let - variabila care poate fi reassignata
-let firstName = 'Anna';
-firstName = 'Bob';
-// const - variabila care nu poate fi reassignata
-const lastName = 'Smith';
-// lastName = 'Doe'; - eroare */
-
-// Mathemathical Operators
-// +, -, *, /, %, ** - puterea 
-const firstName = 'Anna';
-const lastName = 'Smith';
-const emptySpace = ' ';
-const fullName = firstName + emptySpace + lastName;
-// Concatenare - adaugarea unui string la alt string
-// console.log(fullName);
-
-// ** - ridicarea la putere
-// 3^4 = 3**4 = 3*3*3*3 = 81
-// console.log(3**3);
-
-// % - modulo - restul impartirii
-// 5 / 2 = 2 rest 1
-// console.log(5 % 2);
-
-// = assign operator
-let x = 5 + 10;
-// x = 15;
-// +=
-x += 10; // x = x + 10;
-console.log(x); //25
-
-// -=
-x -= 10; // x = x - 10;
-console.log(x); // 15
-
-// *=
-x *= 10; // x = x * 10;
-console.log(x); // 150
-
-// /=
-x /= 10; // x = x / 10;
-console.log(x); // 15
-
-// ++ - incrementare cu 1
-x++; // x = x + 1;
-// for (let i = 0; i < 10; i++) {console.log('hello')}
-
-// -- - decrementare cu 1
-x--; // x = x - 1;
-
-// Comparison Operators
-// >, <, >=, <=, ==, ===, !=, !==
-const comparisonVariable = 15 > 10; // boolean
-console.log(typeof comparisonVariable); // false - boolean
-
-console.log(5 <= 5); // true
-
-// == - verifica doar valoarea
 const age = 5;
-const age2 = '5';
-console.log(typeof age == typeof age2); // false
+const controlAge = 18;
+35 >= 18; // true
+const isOldEnough = age >= controlAge;
 
-// === - verifica valoarea si tipul de date
-console.log(age === age2); // false
+// In parantezele rotunde se pune conditia
+// conditia este o expresie care returneaza true sau false
+// if (isOldEnough) {
+//     console.log('User can vote');
+// } else {
+//     const yearsLeft = controlAge - age;
+//     console.log(`User cannot vote yet. Wait ${yearsLeft} years.`);
+// }
 
-// != - arata negarea (verifica doar valoarea)
-age == age2; // true
-// asa-i ca 5 nu este egal cu 5?
-console.log(age != age2); // false
+// conditia else este optionala
+// if (isOldEnough) {
+//     console.log('User can vote');
+// }
 
-// !== - verifica valoarea si tipul de date
-age === age2 // false
-// asa-i ca 5 (number) nu este egal cu 5 (string)?
-console.log(age !== age2); // true
+// const birthYear = 1990; // secolul 20
+// let century; // undefined
 
-// Negation !
-// if (!data) return loading();
+// if (birthYear >= 2000) {
+//     console.log('We entered if statement');
+//     century = 20;
+// } else {
+//     console.log('We entered else statement');
+//     century = 21;
+// }
+
+// console.log(`Century is ${century}`);
+
+
+// Type conversion and coercion
+
+const inputYear = '1991';
+
+
+// Type conversion
+const year = Number(inputYear);
+const eligibleAge = 2023 - year;
+
+const minutes = 23;
+console.log(String(minutes));
+
+
+// Type coercion
+// Adunarea la string si number se returneaza string (concatenare)
+console.log(inputYear + 18); // '1991' + '18' = 199118
+// Scaderea, inmultirea si impartirea la string si number se returneaza number
+console.log(inputYear - 18); // 1973
+
+// NaN - not a number
+// console.log(typeof NaN);
+
+// examples type coercion
+
+const message = 'I am ' + 23 + ' years old';
+console.log(typeof message); // I am 23 years old
+
+const data = '23' + 'Iuliana' - 3; // NaN
+console.log(typeof data); // 23 - 10 - 3 = 10
+
+console.log(2 + 3 + '5'); // '55' string
+// 1. 2 + 3 = 5
+// 2. 5 + '5' = '55'
+
+console.log('10' - '4' - 2 + '5'); // '45' string
+// 1. 10 - 4 = 6 number
+// 2. 6 - 2 = 4 number
+// 3. 4 + '5' = '45' string
+
+// Putem schimba type la 3 tipuri de date: string, number, boolean
+
+// Truthy and Falsy values
+// falsy - valori care nu tocmai sunt false, dar daca sunt convertite in boolean va da false
+
+// 5 falsy values: 0, '', undefined, null, NaN
+
+console.log('boolean:', Boolean(100)); // false
+
+// 0 - false
+// 1 - true
+
+let cars;
+
+if (!cars) console.log('We should wait cars value');
+
+// if (cars) {
+//     console.log('We have cars');
+// } else {
+//     console.log('We should buy at least car');
+// }
+
+let height = 10;
+
+// if (height) {
+//     // if (height > 5) {
+//     //     console.log('Height is bigger than 5');
+//     // } else {
+//     //     console.log('Height is defined, but is smaller than 5');
+//     // }
+// } else if () {
+//     console.log('Height is undefined');
+// } 
+
+// == & ===
+// === - comparatie stricta (verifica valoarea si tipul de date)
+// == - loose comparation (verifica doar valoarea)
+
+// const userAgeInput = '18';
+// if (Number(userAgeInput) === 18) console.log('You just became an adult');
+
+// Boolean logic - AND (&&), OR ( || ), NOT ( ! )
+
+// conditia A - Ana has 18 years;
+// conditia B - Ana has driving license;
+
+// Construim un formular de angajare
+// if (conditia A && conditia B) {
+    // A - true si B - true 
+    // pozitia de sofer
+// } else {
+    // A - false si B - false
+    // A - true si B - false
+    // A - false si B - true
+    // pozitia de vanzator
+// }
+
+// if (!conditia A) console.log('Ana can not be employed');
+
+// if (conditia A) {
+//     console.log('Ana can be employed');
+// } else {
+//     console.log('Ana can not be employed');
+// }
+
+const laptops = 10;
+
+// A: Noi avem mai mult de 20 de laptopuri; false 10 > 20
+// B: Noi avem mai putin sau egal cu 40 de laptopuri; true 10 <= 40;
+
+// !A - true
+// !B - false
+// A && B - false
+// A || B - true 10 > 20 sau 10 <= 40
+// !A && !B  - true && false = false
+// A || B || C
