@@ -93,4 +93,6 @@
 
 .menu-wrap .toggle:checked ~ .menu ul {
     opacity: 1;
+    width: 400px;
+    height: 200px;
 }

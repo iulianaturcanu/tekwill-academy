@@ -5,6 +5,7 @@
 }
 
 body {
+  margin: 0px;
   background-color: var(--dark-barckground-color);
 }
 
@@ -21,9 +22,32 @@ body {
 
 .containers {
   display: grid;
-  grid-template-columns: repeat(3, 320px);
-  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.containers div {
+  background-color: var(--light-text-color);
+  color: black;
+}
+
+.containers div p {
+  color: #737373;
+  text-align: inherit;
+}
+
+.card-item {
+  padding: 40px;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
 }
 
 /* min-width 1024+ */
@@ -43,17 +67,11 @@ body {
 }
 
 .values-section {
-  margin: 100px 0;
+  margin: 100px auto;
   display: grid;
   justify-content: center;
   align-content: end;
-  background: linear-gradient(
-    to bottom, 
-    blue 0%,
-    blue 50%,
-    green 50%,
-    green 100%
-  )
+  max-width: 1000px;
 }
 
 .values-section h2,
@@ -114,51 +132,16 @@ body {
   border: 1px solid #FFFFFF;
 }
 
-/* .animated-box {
-  animation-name: animate1;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  width: 320px;
-  height: 100px;
-}  */
-/* 
-@keyframes animate1 {
-  0% {
-    background-color: red;
-  }
-  50% {
-    background-color: blue;
-  }
-  75% {
-    background-color: green;
-  }
-  100% {
-    background-color: white;
-  }
-} */
-
-
-/* .cta-buttons .animated-button { */
-  /* transition-property: background;
-  transition-duration: 2s;
-  transition-timing-function: ease-in-out; */
-  /* transition: all 2s ease-in-out; */
-
-  /* transform: scale(1.5); */
-/* } */
-/* 
-.cta-buttons .animated-button:hover {
-  transform: rotate(180deg);
-} */
-
 .value-container {
   background-color: greenyellow;
   color: black;
 }
 
 .form-section {
-  margin: 0 auto;
-  max-width: 1000px;
+  padding: 100px 0;
+  background-image: url(img/bg-appointment.png);
+  background-size: cover;
+  width: 100%;
 }
 
 .form-container {
@@ -176,4 +159,30 @@ body {
 .form-container input:last-child {
   /* row-start / column-start / row-end / column-end */
     grid-area: 3 / 1 / 5 / 3;
+}
+
+.form-section div {
+   margin: 0 auto;
+  max-width: 1000px;
+}
+
+.form-section h2 {
+  font-size: 40px;
+  color: var(--light-text-color);
+} 
+
+.form-section h5 {
+  color: var(--light-text-color);
+}
+
+.form-section .submit-button {
+  width: 218px;
+  height: 58px;
+  border-radius: 5px;
+  margin-top: 40px;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--light-text-color);
 }

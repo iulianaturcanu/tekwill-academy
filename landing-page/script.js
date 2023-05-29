@@ -15,6 +15,8 @@
 // z = y = 10;
 // console.log(z, y); // 10 10
 
+const result = 2 + 3 * 4; // 14
+
 // left-to-right
 // 25 - 10 - 5;
 //10;
@@ -29,19 +31,18 @@
 
 // Program pentru verificarea varstei de vot
 
-const age = 5;
+// const age = 5;
 const controlAge = 18;
-35 >= 18; // true
-const isOldEnough = age >= controlAge;
+// const isOldEnough = age >= controlAge;
 
 // In parantezele rotunde se pune conditia
 // conditia este o expresie care returneaza true sau false
-// if (isOldEnough) {
-//     console.log('User can vote');
-// } else {
-//     const yearsLeft = controlAge - age;
-//     console.log(`User cannot vote yet. Wait ${yearsLeft} years.`);
-// }
+if (isOldEnough) {
+    console.log('User can vote');
+} else {
+    const yearsLeft = controlAge - age;
+    console.log(`User cannot vote yet. Wait ${yearsLeft} years.`);
+}
 
 // conditia else este optionala
 // if (isOldEnough) {
@@ -64,10 +65,7 @@ const isOldEnough = age >= controlAge;
 
 // Type conversion and coercion
 
-const inputYear = '1991';
 
-
-// Type conversion
 const year = Number(inputYear);
 const eligibleAge = 2023 - year;
 
@@ -76,13 +74,20 @@ console.log(String(minutes));
 
 
 // Type coercion
+
 // Adunarea la string si number se returneaza string (concatenare)
 console.log(inputYear + 18); // '1991' + '18' = 199118
+const inputYear = '1991';
 // Scaderea, inmultirea si impartirea la string si number se returneaza number
 console.log(inputYear - 18); // 1973
 
 // NaN - not a number
 // console.log(typeof NaN);
+
+console.log(Number("1991")); // rezultat: 1991
+console.log(Number("1991abc")); // rezultat: NaN
+console.log(Number("abc")); // rezultat: NaN
+
 
 // examples type coercion
 
@@ -115,15 +120,14 @@ console.log('boolean:', Boolean(100)); // false
 
 let cars;
 
-if (!cars) console.log('We should wait cars value');
+let age = 16;
+let hasParentConsent = true;
 
-// if (cars) {
-//     console.log('We have cars');
-// } else {
-//     console.log('We should buy at least car');
-// }
+if (age >= 18 || hasParentConsent) {
+  console.log("Persoana este eligibilă să participe la eveniment");
+}
 
-let height = 10;
+
 
 // if (height) {
 //     // if (height > 5) {
