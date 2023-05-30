@@ -9,6 +9,30 @@ body {
   background-color: var(--dark-barckground-color);
 }
 
+.main-nav {
+  margin: 2em;
+  padding: 1em;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav-link:link {
+  text-decoration: none;
+}
+
+.main-nav-link {
+  color: #fff;
+}
+
+.box-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
 .main-header {
   /* Centreaza elementele la mijlloc pe verticala si orizontala */
   display: flex;
@@ -16,8 +40,6 @@ body {
   align-items: center;
   color: #fff;
   height: auto;
-  margin: 0 auto;
-  max-width: 1000px;
 }
 
 .containers {
@@ -25,8 +47,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 32px;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .containers div {
@@ -50,28 +70,11 @@ body {
   gap: 16px;
 }
 
-/* min-width 1024+ */
-@media (min-width: 1024px) {
-  .containers {
-    gap: 80px;
-  }
-}
-
-/* marimea este de 368px sau mai putin */
-/* max-width: 0 - 368px */
-@media (max-width: 368px) {
-  .containers {
-    grid-template-columns: 320px;
-    grid-template-rows: repeat(6, 200px);
-  }
-}
-
 .values-section {
   margin: 100px auto;
   display: grid;
   justify-content: center;
   align-content: end;
-  max-width: 1000px;
 }
 
 .values-section h2,
@@ -146,7 +149,7 @@ body {
 
 .form-container {
   display: grid;
-  grid-template-columns: repeat(2, 286px);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 50px);
   gap: 20px;
 }
@@ -159,11 +162,6 @@ body {
 .form-container input:last-child {
   /* row-start / column-start / row-end / column-end */
     grid-area: 3 / 1 / 5 / 3;
-}
-
-.form-section div {
-   margin: 0 auto;
-  max-width: 1000px;
 }
 
 .form-section h2 {

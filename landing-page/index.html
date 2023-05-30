@@ -4,7 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
-    <link href="menu.css" rel="stylesheet" />
+    <!-- <link href="menu.css" rel="stylesheet" /> -->
+    <link href="queries.css" rel="stylesheet" />
     <!-- <script>
         let variable = 'Hello World';
         if (variable === 'Hello World') alert('Hello World');
@@ -14,32 +15,32 @@
 </head>
 
 <body>
-    <header class="main-header">
+    <header class="main-header box-container">
         <h1>KMarketer</h1>
-        <nav class="menu-wrap">
-            <input type="checkbox" class="toggle">
+        <nav class="main-nav">
+            <!-- <input type="checkbox" class="toggle">
             <div class="hamburger">
                 <div></div>
             </div>
-            <div class="menu">
-                <ul>
-                    <li>
-                        <a href="#main" class="main-nav-link">Home</a>
-                    </li>
-                    <li>
-                        <a href="#values" class="main-nav-link">Values</a>
-                    </li>
-                    <li>
-                        <a href="#" class="main-nav-link">Pricing</a>
-                    </li>
-                    <li>
-                        <a href="#" class="main-nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <div class="menu"> -->
+            <ul>
+                <li>
+                    <a href="#main" class="main-nav-link">Home</a>
+                </li>
+                <li>
+                    <a href="#values" class="main-nav-link">Values</a>
+                </li>
+                <li>
+                    <a href="#" class="main-nav-link">Pricing</a>
+                </li>
+                <!-- <li>
+                    <a href="#" class="main-nav-link">Contact</a>
+                </li> -->
+            </ul>
+            <!-- </div> -->
         </nav>
     </header>
-    <section class="main-content" id="main">
+    <section class="main-content box-container" id="main">
         <h1 class="heading-primary">We Take Care of the Future</h1>
         <h4>We know how large objects will act, but things on a
             small scale just do not act that way.</h4>
@@ -48,13 +49,13 @@
             <button>Learn More</button>
         </div>
     </section>
-    <section class="values-section" id="values">
+    <section class="values-section box-container" id="values">
         <div class="values-text">
             <h2>WHY CHOOSE US</h2>
             <p>Problems trying to resolve the conflict between
                 the two major realms of Classical physics: Newtonian mechanics</p>
         </div>
-        <div class="containers">
+        <div class="containers box-container">
             <div class="card-item">
                 <div class="flex-row">
                     <img src="img/Vector1.png">
@@ -129,7 +130,7 @@
         </div>
     </section>
     <section class="form-section">
-        <div>
+        <div class="box-container">
             <h5>Contact us</h5>
             <h2>Make an Appointment</h2>
             <form class="form-container">
