@@ -1,132 +1,166 @@
-/**
-// 7. Declarați un array numit `numbers` cu următoarele elemente: 1, 2, 3, 4, 5.
-//    - Utilizați o buclă `for` pentru a calcula suma tuturor elementelor din array.
-//    - Afișați suma în consolă.
+/** // Problema: Numărul de vocale
+//    Scrieți o funcție care primește un șir de caractere și 
+//    numără câte vocale conține șirul utilizând o buclă `while`.
+//    Exemplu de input: `Salut, ma numesc Maria'`
+//    Exemplu de output: `8`
 
-const numbers = [1, 2, 3, 4, 5];
-// console.log(numbers.length); // 5
-// i 0, 1, 2, 3, 4  [0, 5)
+const calcVowels = (text) => {
+  let vowelNumber = 0;
+  // const vowels = ['a', 'u', 'i', 'o', 'e', 'A', 'U', 'I', 'O', 'E'];
+  const vowels = ['a', 'u', 'i', 'o', 'e'];
 
-let sum = 0;
-for(let i = 0; i < numbers.length; i++) {
-  // orice variabila declarata inauntru la block {} cu const, 
-  // ea nu poate fi accesata inafara block-ului
-  // console.log(numbers[i]); // 1,2,3,4,5
-  sum = sum + numbers[i]; // sum += numbers[i]
-  // console.log(sum);
-}
-// console.log(sum); 
-
-
-
-// 8. Declarați un array numit `names` cu următoarele elemente: "John", "Jane", "Mike", "Anna".
-//    - Utilizați o buclă `for` pentru a crea un nou array care conține lungimea fiecărui nume din array-ul `names`.
-//    - Afișați noul array rezultat în consolă.
-
-const names = ["Jo", "Jan", "Mike", "Annaaa"];
-let result = [];
-
-for( let i = 0; i < names.length; i++) {
-  // console.log(names[i].length); // 2, 3, 4, 6
-  // result = [2, 3, 4, 6];
-  result[i] = names[i].length;
-  // result.push(names[i].length);
-  // console.log(result);
-  // 1 iteratie [] [2]
-  // 2 iteratie [2] [2, 3]
-}
-
-console.log(result); */
-
-const person = ['Tom', 'Smith', 30, 'developer', ["Ana", "John"]];
-
-person[2] // 100% ca aici este age
-// obiectul - mai multe perechi key-value
-const person2 = {
-  firstName: 'Tom',
-  lastName: 'Smith',
-  age: 30,
-  jobTitle: 'developer',
-  friends: ["Ana", "John"],
-  calcBirthYear: (age) => {
-    const year = (new Date).getFullYear();
-    return year - age;
-  }
-}
-
-person2.calcBirthYear(10);
-person2["calcBirthYear"](10);
-
-// Ordinea de scriere a elementelor conteaza in array, dar in obiect nu
-
-// Dot Notation
-// console.log(person2.jobTitle);
-
-//Braket ['']
-// console.log(person2["firstName"]);
-// console.log(person2["lastName"]);
-
-const nameKey = 'Name';
-
-// console.log(person2['first' + nameKey]);
-// console.log(person2['last' + nameKey]);
-
-// const interestedInInput = prompt(`What do you want to know about the person? Choose between ${Object.keys(person2)}`);
-// interestedInInput = "age";
-// console.log(person2.interestedInInput) // undefined - cauta key interestedInInput in obiectul person2
-
-// if (person2[interestedInInput]) {
-//   console.log(person2[interestedInInput]) // 30 - cauta key age in obiectyl person2
-// } else {
-//   console.log(`${interestedInInput}`); //age
-// }
-
-// person2.location = 'Portugal';
-// person2['age'] = 24;
-// console.log(person2);
-
-//While loop
-
-// for (declaram variabila, conditia, incrementarea)
-for ( let rep = 1; rep <= 10; rep ++) {
-  console.log(rep);
-}
-
-let rep = 1;
-// infinite loop - conditia mereu e true
-while (rep <= 10) {
-  console.log(rep);
-  rep++;
-}
-
-// roll a dice until 6 is shown - 100 aruncam spre exemplu
-
-//Math.random() * 6; // 0 ... < 6 
-// (Math.random() * 6) + 1 // 1 ,2.4356437,..., < 6
-let dice = Math.floor((Math.random() * 6) + 1); // 1, 2, 3, 4, 5, 6
-// while (dice !== 6 ) {
-//   console.log(`You rolled a ${dice}`);
-//   dice = Math.floor((Math.random() * 6) + 1)
-//   if (dice === 6) console.log('loop is about to end');
-// }
-
-// Problema: Calculul mediei
-// Scrieți o funcție care primește un obiect care conține notele unui student și returnează media acestuia.
-// Exemplu de input: { nota1: 8, nota2: 7, nota3: 9 } [8, 7, 9]
-// Exemplu de output: 8
-
-function numaraCaractere(text: string, caracter: string) {
-  let count = 0;
+  // console.log(text.toLowerCase());
+  // includes() - daca careva element se include sau nu in array
   let index = 0;
+  while(index < text.length) {
+    const characters = text[index].toLowerCase();
 
-  while (index < text.length) {
-    if (text[index] === caracter) {
-      console.log(text[index])
-      count++;
+    if(vowels.includes(characters)) {
+      vowelNumber++;
     }
     index++;
   }
 
-  return count;
+  return vowelNumber;
 }
+
+const text = "Salut, sunt Ana";
+
+// console.log(calcVowels(text));
+
+// 9. Problema: Verificarea palindromului
+//    Scrieți o funcție care primește un șir de caractere și 
+//    verifică dacă acesta este un palindrom (se citește la fel în ambele sensuri) 
+//    utilizând o buclă `while`.
+//    Exemplu de input: `'level'`
+//    Exemplu de output: `true`
+
+// palindrom - level, Ana, sus, wow, capac, madam  
+
+// const isPalindrome = (text) => {
+//   let startIndex = 0;
+//   let lastIndex = text.length - 1; //4
+
+//   while(startIndex < lastIndex) {
+//     if (text[startIndex] === text[lastIndex]) {
+//       return true;
+//     }
+//     startIndex++;
+//     lastIndex--;
+//   }
+//   return false;
+//   // 1 iteratie l === l
+//   // 2 iteratie e === e
+// }
+
+//reserve string 
+const isPalindrome = (text) => {
+  const characters = text.split(""); //['m', 'a', 'd', 'a', 'm']
+  reversedText = characters.reverse().join(''); //['m', 'a', 'd', 'a', 'm']
+
+  if (reversedText === text) {
+    return true;
+  }
+  return false;
+}
+
+console.log(isPalindrome('getryj')); //true
+// daca litera[0] este egal cu litera[length-1]; */
+
+// for ... in
+// const object = { a: 1, b: 2, c: 3 };
+
+// for (const key in object) {
+//   console.log(`${key}: ${object[key]}`);
+// }
+
+// // Problema: enumerati fiecare cheie + valoare a obiectului
+// const keys = Object.keys(object); // scoatem cheile obiectului
+// console.log(keys);
+
+// for (let i=0; i < keys.length; i++) {
+//   const key = keys[i];
+//   console.log(`${key}: ${object[key]}`)
+// }
+
+// for...of
+// const array1 = ['a', 'b', 'c'];
+
+// for (const element of array1) {
+//   console.log(element);
+// }
+
+// for (let i=0; i < array1.length; i++) {
+//   const element = array1[i];
+//   console.log(element);
+// }
+
+// Slice
+// Array.slice(startIndex, endIndex);
+// startIndex - indexul de la care se va incepe extragerea elementelor
+// endIndex - indexul pana unde se vor extrage elementelor
+
+// const array = ['a', 'b', 'c', 'd', 'e'];
+// 'd', 'e' intersectia cu 'a', 'b', 'c', 'd' ['d']
+// console.log(array.slice(-2, 4)); // ['d']
+
+// no params in slice
+// console.log(array.slice()) // Creaza o copie a array-ului
+// doar startIndex 
+// console.log(array.slice(2)); // Creaza un array nou de la indexul 2 inclusiv
+//['c', 'd', 'e']
+// daca specific startIndex si endIndex
+// creaza un array de la indexul 3 inclusiv si pana la 4, fara de valoarea 4
+// console.log(array.slice(3, 4)); // ['d']
+// valoarea negativa la startIndex, returneaza ultimele valori
+// console.log(array.slice(-2))// returneaza ultimele 2 valori in array
+// ['d', 'e']
+// valoarea negativa la startIndex si endIndex
+// endIndex = array.length = 5
+// endIndex (-2) = array.length - 2 = 3
+// array2 = ['a', 'b', 'c']
+// console.log(array2.slice(1, 3));
+// console.log(array.slice(1, -2)); // ['b', 'c']
+
+// slice sa scriem sub forma de for
+// const sliceArray = (startIndex, endIndex) => {
+//   const array = ['a', 'b', 'c', 'd', 'e'];
+//   const slicedArray = [];
+
+//   for (let i = startIndex; i < endIndex; i++) {
+//     slicedArray.push(array[i]);
+//   }
+//   return slicedArray;
+// }
+
+// console.log(sliceArray(3, 4));
+
+// Problem: Print Odd Numbers
+// Given an array of numbers, write a function
+//  that prints only the odd numbers in the array.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+
+const printOddNumber = (array) => {
+  array.forEach(element => {
+    if (element % 2 !== 0) {
+      console.log("Odd number:" + element);
+    }
+  })
+}
+
+// printOddNumber(numbers);
+
+// map 
+const printOddNumber2 = (array) => {
+  return array.map(element => {
+    if (element % 2 !== 0) {
+      return element; // pune in array-ul nou doar numerele impare
+    }
+  }).filter(Boolean);
+}
+
+console.log(printOddNumber2(numbers));
+
+// Reduce 
 
