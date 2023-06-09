@@ -1,151 +1,132 @@
-"use strict";
-/** 
-// Creati 2 functii care calculeaza proprietatile unui cerc
-// Creați o funcție numită calcCircumference:
-// Transmiteți raza funcției.
-// Calculați circumferința pe baza razei dupa formula: L = 2*pi*R(raza) și afișați "The circumference is NN units"
+/**
+// 7. Declarați un array numit `numbers` cu următoarele elemente: 1, 2, 3, 4, 5.
+//    - Utilizați o buclă `for` pentru a calcula suma tuturor elementelor din array.
+//    - Afișați suma în consolă.
 
-// Creați o funcție numită calcArea:
+const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.length); // 5
+// i 0, 1, 2, 3, 4  [0, 5)
 
-// Transmiteți raza funcției.
-// Calculați aria pe baza razei  dupa formula: A = pi * R^2 și dati ca output "The area is NN square units" 
-// Bonus: calculati in functia 2 aria pe baza rezultatului din functia 1 dupa formula:
-// A = circumferinta ^2 / (4 *pi);
+let sum = 0;
+for(let i = 0; i < numbers.length; i++) {
+  // orice variabila declarata inauntru la block {} cu const, 
+  // ea nu poate fi accesata inafara block-ului
+  // console.log(numbers[i]); // 1,2,3,4,5
+  sum = sum + numbers[i]; // sum += numbers[i]
+  // console.log(sum);
+}
+// console.log(sum); 
 
 
-const calcCircumference = (radius) => {
-  const PI = 3.14;
-  const circumference = 2 * PI * radius;
-  console.log(`The circumference is ${circumference} units`);
-  return circumference;
+
+// 8. Declarați un array numit `names` cu următoarele elemente: "John", "Jane", "Mike", "Anna".
+//    - Utilizați o buclă `for` pentru a crea un nou array care conține lungimea fiecărui nume din array-ul `names`.
+//    - Afișați noul array rezultat în consolă.
+
+const names = ["Jo", "Jan", "Mike", "Annaaa"];
+let result = [];
+
+for( let i = 0; i < names.length; i++) {
+  // console.log(names[i].length); // 2, 3, 4, 6
+  // result = [2, 3, 4, 6];
+  result[i] = names[i].length;
+  // result.push(names[i].length);
+  // console.log(result);
+  // 1 iteratie [] [2]
+  // 2 iteratie [2] [2, 3]
 }
 
-const calcArea = (radius) => {
-  const PI = 3.14;
-  const area = PI * (radius ** 2);
-  return console.log(`The area is ${area} square units`);
+console.log(result); */
+
+const person = ['Tom', 'Smith', 30, 'developer', ["Ana", "John"]];
+
+person[2] // 100% ca aici este age
+// obiectul - mai multe perechi key-value
+const person2 = {
+  firstName: 'Tom',
+  lastName: 'Smith',
+  age: 30,
+  jobTitle: 'developer',
+  friends: ["Ana", "John"],
+  calcBirthYear: (age) => {
+    const year = (new Date).getFullYear();
+    return year - age;
+  }
 }
 
-const calcArea2 = () => {
-  const PI = 3.14;
-  // const circumference = calcCircumference(4);
-  const area = (calcCircumference(4) ** 2) / (4 * PI);
-  return console.log(`The area is ${area} square units`);
+person2.calcBirthYear(10);
+person2["calcBirthYear"](10);
+
+// Ordinea de scriere a elementelor conteaza in array, dar in obiect nu
+
+// Dot Notation
+// console.log(person2.jobTitle);
+
+//Braket ['']
+// console.log(person2["firstName"]);
+// console.log(person2["lastName"]);
+
+const nameKey = 'Name';
+
+// console.log(person2['first' + nameKey]);
+// console.log(person2['last' + nameKey]);
+
+// const interestedInInput = prompt(`What do you want to know about the person? Choose between ${Object.keys(person2)}`);
+// interestedInInput = "age";
+// console.log(person2.interestedInInput) // undefined - cauta key interestedInInput in obiectul person2
+
+// if (person2[interestedInInput]) {
+//   console.log(person2[interestedInInput]) // 30 - cauta key age in obiectyl person2
+// } else {
+//   console.log(`${interestedInInput}`); //age
+// }
+
+// person2.location = 'Portugal';
+// person2['age'] = 24;
+// console.log(person2);
+
+//While loop
+
+// for (declaram variabila, conditia, incrementarea)
+for ( let rep = 1; rep <= 10; rep ++) {
+  console.log(rep);
 }
 
-calcCircumference(4);
-calcArea(4);
-calcArea2();
-
-// Scrieți o funcție numită calculateDogAge care:
-// are 1 argument: vârsta cățelușului tău (humanYear, dogYear, etc)
-// lungimea drumului (metri, kilometri)
-// calculează vârsta câinelui dvs. pe baza ratei de conversie a 1 an uman la 7 ani câine.
-// afișează rezultatul pe ecran astfel: "Your doggie is NN years old in dog years!”
-// Apelați funcția de trei ori cu seturi diferite de valori.
-// Bonus: Adăugați un argument suplimentar la funcția care ia rata de conversie a anilor om în câine.
-
-const calculateDogAge = (humanYears, conversionRate) => {
-  const dogYears = humanYears * conversionRate;
-  console.log(`Your doggie is ${dogYears} years old in dog years!`);
+let rep = 1;
+// infinite loop - conditia mereu e true
+while (rep <= 10) {
+  console.log(rep);
+  rep++;
 }
 
-calculateDogAge(1, 10); */
+// roll a dice until 6 is shown - 100 aruncam spre exemplu
 
-// Arrays
-const fruit1 = 'apple';
-const fruit2 = 'orange';
-const fruit3 = 'kiwi';
+//Math.random() * 6; // 0 ... < 6 
+// (Math.random() * 6) + 1 // 1 ,2.4356437,..., < 6
+let dice = Math.floor((Math.random() * 6) + 1); // 1, 2, 3, 4, 5, 6
+// while (dice !== 6 ) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.floor((Math.random() * 6) + 1)
+//   if (dice === 6) console.log('loop is about to end');
+// }
 
-const fruits = ['apple', 'orange', ['kiwi', 'banana']];
-console.log(Array.isArray(fruits)); // boolean, Is fruits an array?
-// const years = [ 1991, 1993, 2001 ];
-// 1991 - 0 
-// 1993 - 1 
-// 2001 - 2
-// const years = new Array(1991, 1993, 2001);
+// Problema: Calculul mediei
+// Scrieți o funcție care primește un obiect care conține notele unui student și returnează media acestuia.
+// Exemplu de input: { nota1: 8, nota2: 7, nota3: 9 } [8, 7, 9]
+// Exemplu de output: 8
 
-// index = 0...index-ul final a array-ului
-// console.log(years[2]); // elementul la pozitia 2 din array-ul years
-// console.log(years[1]);
-// console.log(years[0]);
+function numaraCaractere(text: string, caracter: string) {
+  let count = 0;
+  let index = 0;
 
-// console.log(`Lungimea array-ului ${years.length} units`);
-// console.log("Lungimea array-ului" + years.length + 'units');
+  while (index < text.length) {
+    if (text[index] === caracter) {
+      console.log(text[index])
+      count++;
+    }
+    index++;
+  }
 
-// eu vreau elementul la pozitia (years.length - 1) din array-ul years years[3]
-// afisarea ultimului element din array-ul years
-// console.log(years[years.length - 2]);
-
-// years[1] = 2400;
-// years[2] = 2600;
-// years[0] = 2700;
-
-// console.log(years);
-
-const person = ["Bob", "Smith", 30, "teacher"];
-const personName = person[0];
-const surname = person[1];
-// console.log(`Persoana se numeste ${personName} ${surname}, are ${person[2]} ani si lucreaza in calitate de ${person[3]}`);
-
-// Array methods
-
-// Pentru a verifica daca anumitui element in array exista sau nu in array- includes
-console.log(person.includes('Bob'));
-
-// Pentru a returna indexul - indexOf
-console.log(person.indexOf(30));
-
-// Add elements
-const friends = ["Ana", "Bob", "Steven"];
-// push method - adauga un element nou la sfarsitul array-ului 
-console.log(friends.push('Silvia')); // 4 
-console.log(friends); // ["Ana", "Bob", "Steven", "Silvia"]
-// push method returneaza lungimea noua a array-ului
-
-// unshift method - adauga un element nou la inceputul array-ului 
-console.log(friends.unshift('Tom')); // 5
-console.log(friends); // ["Tom", "Ana", "Bob", "Steven", "Silvia"]
-
-// Remove element
-// pop method - sterge un element de la sfarsitul array-ului 
-console.log(friends.pop()); // Silvia - returneaza elementul sters
-console.log(friends); // ["Tom", "Ana", "Bob", "Steven"]
-
-// shift method - sterge un element de la inceputul array-ului 
-console.log(friends.shift()) // Tom
-console.log(friends) // ["Ana", "Bob", "Steven"]
-
-// Iteration: the for loop
-
-// console.log('Lifting repetition 1');
-// console.log('Lifting repetition 2');
-// console.log('Lifting repetition 3');
-// console.log('Lifting repetition 4');
-// console.log('Lifting repetition 5');
-// console.log('Lifting repetition 6');
-console.log('---------------------');
-
-// for loop ruleaza cat timp conditia este true
-// rep = 1; 1 <= 6 - true
-// rep = 2; 2 <=6 - true
-// ...
-// rep = 7; 7 <= 6 - false 
-for(let rep = 0; rep <= 6; rep += 2) {
-  console.log(`Lifting repetition ${rep}`);
+  return count;
 }
 
-const years = new Array(1991, 1993, 2001, 2003, 1920);
-
-// i < years.length 
-// i <= years.length -1 
-// length - se incepe de la 1, years.length = 5
-// index 0, 1, ..., 4
-for(let i = 0; i < years.length; i++) console.log(years[i]);
-
-console.log('-------------------')
-// Reverse loop
-// index 4, 3, ..., 0
-console.log(years.length);
-console.log(years[years.length - 1]);
-for(let i = years.length - 1; i >= 0; i--) console.log(years[i]);
