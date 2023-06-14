@@ -1,166 +1,180 @@
-/** // Problema: Numărul de vocale
-//    Scrieți o funcție care primește un șir de caractere și 
-//    numără câte vocale conține șirul utilizând o buclă `while`.
-//    Exemplu de input: `Salut, ma numesc Maria'`
-//    Exemplu de output: `8`
+// // 1. Sintaxa
+// // function sum(a, b) {
+// //   return a+b;
+// // }
 
-const calcVowels = (text) => {
-  let vowelNumber = 0;
-  // const vowels = ['a', 'u', 'i', 'o', 'e', 'A', 'U', 'I', 'O', 'E'];
-  const vowels = ['a', 'u', 'i', 'o', 'e'];
+// // const sum = function(a, b) {
+// //   return a+b;
+// // }
 
-  // console.log(text.toLowerCase());
-  // includes() - daca careva element se include sau nu in array
-  let index = 0;
-  while(index < text.length) {
-    const characters = text[index].toLowerCase();
+// // const sum = (a, b) => {
+// //   return a + b;
+// // }
 
-    if(vowels.includes(characters)) {
-      vowelNumber++;
+// // 2. Contextul 'this'
+// const person = {
+//   name: 'Tom',
+//   greet: function() {
+//     console.log(this);
+//     return console.log('Salut, ma numesc ' + this.name);
+//   }
+// }
+
+// // console.log(person.greet());
+
+// //Gresit 
+// // const person2 = {
+// //   name: 'Ana',
+// //   greet: () => {
+// //     console.log(this);
+// //     console.log('Salut, ma numesc ' + this.name);
+// //   }
+// // }
+
+// // const person2 = {
+// //   name: 'Ana',
+// //   greet: (personName) => {
+// //     // const name = 'Ana';
+// //     console.log('Salut, ma numesc ' + personName);
+// //   }
+// // }
+
+// // person2.greet(person2.name);
+
+// // // 3. Constructor objects
+// // function Person(name, age) {
+// //   this.name = name;
+// //   this.age = age;
+// // }
+
+// // const american = new Person('Tom', 30);
+
+// // const Person2 = (name, age) => {
+// //   this.name = name;
+// //   this.age = age;
+// // }
+
+// // const american2 = new Person2('Ana', 40);
+
+// // 4. metoda arguments
+// function sum2() {
+//   // console.log(arguments.length)
+//   // let total = 0;
+//   // for (let i = 0; i < arguments.length; i++) {
+//   //   total += arguments[i];
+//   // }
+//   // arguments - array-like object
+//   const args = [...arguments];
+//   const total = args.reduce((total, number) => total + number);
+//   return total;
+//   // return arguments.reduce((total, number) => total + number);
+// }
+
+// const sum = (...numbers) => {
+//   // ...numbers egal cu [numbers]
+//   return numbers.reduce((total, number) => total + number);
+// }
+// console.log(sum2(1, 2, 3, 4, 5)); // []
+
+// Problemă 2: Găsește cel mai lung cuvânt într-un string
+// Scrie o funcție care primește un string și returnează cel mai lung cuvânt din acel string.
+
+const findTheLongestWord = (str) => {
+  let theLongestWord = ''; // 100% string
+  const words = str.split(' '); // ["Today", ...]
+  for (const word of words) {
+    // word: ''
+    console.log({word});
+    // console.log('word: ' + word);
+    if (word.length > theLongestWord.length) {
+      theLongestWord = word;
     }
-    index++;
   }
 
-  return vowelNumber;
+  return theLongestWord;
 }
 
-const text = "Salut, sunt Ana";
+console.log(findTheLongestWord('Today is a beautiful day'));
 
-// console.log(calcVowels(text));
+const path = '127.0.0.1:5501/landing-page/index.html';
+const paths = path.split('/');
 
-// 9. Problema: Verificarea palindromului
-//    Scrieți o funcție care primește un șir de caractere și 
-//    verifică dacă acesta este un palindrom (se citește la fel în ambele sensuri) 
-//    utilizând o buclă `while`.
-//    Exemplu de input: `'level'`
-//    Exemplu de output: `true`
+// Gasirea celui mai mare numar dintr-un array
+const findTheBiggestNumber = (array) => {
+  // Math.max(1, 2, 3, 4, 5)
+  // return Math.max(...array);
+  // Presupunem ca primul element din array este cel mai mare
+  let theBiggestNumber = array[0];
 
-// palindrom - level, Ana, sus, wow, capac, madam  
-
-// const isPalindrome = (text) => {
-//   let startIndex = 0;
-//   let lastIndex = text.length - 1; //4
-
-//   while(startIndex < lastIndex) {
-//     if (text[startIndex] === text[lastIndex]) {
-//       return true;
-//     }
-//     startIndex++;
-//     lastIndex--;
-//   }
-//   return false;
-//   // 1 iteratie l === l
-//   // 2 iteratie e === e
-// }
-
-//reserve string 
-const isPalindrome = (text) => {
-  const characters = text.split(""); //['m', 'a', 'd', 'a', 'm']
-  reversedText = characters.reverse().join(''); //['m', 'a', 'd', 'a', 'm']
-
-  if (reversedText === text) {
-    return true;
+  for (let i = 1; i < array.length; i++) {
+    if(array[i] > theBiggestNumber) {
+      theBiggestNumber = array[i];
+    }
   }
-  return false;
+
+  return theBiggestNumber;
 }
 
-console.log(isPalindrome('getryj')); //true
-// daca litera[0] este egal cu litera[length-1]; */
+// Concatinarea la 2 array-uri
 
-// for ... in
-// const object = { a: 1, b: 2, c: 3 };
+const concatinateArrays = (array1, array2) => {
+  // [1, 2, 3, 4, 5, 6]
+  return array1.push(...array2);
+  // const [...rest] = array1;
+  // const [...rest2] = array2;
+  // [rest, rest2]
+  // return [...array1, ...array2];
+}
 
-// for (const key in object) {
-//   console.log(`${key}: ${object[key]}`);
-// }
+// const array1 = [1, 2, 3, 4];
+// const array2 = [5, 6];
 
-// // Problema: enumerati fiecare cheie + valoare a obiectului
-// const keys = Object.keys(object); // scoatem cheile obiectului
-// console.log(keys);
+// Problemă 5: Calcularea sumei și diferenței a două numere
+// Scrie o funcție care primește un obiect destructurat cu proprietățile a și b
+// și returnează un alt obiect care conține suma și diferența acestor două numere.
 
-// for (let i=0; i < keys.length; i++) {
-//   const key = keys[i];
-//   console.log(`${key}: ${object[key]}`)
-// }
+// // const person2 = {
+// //   name: 'Ana',
+// //   greet: (personName) => {
+// //     // const name = 'Ana';
+// //     return console.log('Salut, ma numesc ' + personName);
+// //   }
+// // }
 
-// for...of
-// const array1 = ['a', 'b', 'c'];
+// // person2.greet();
 
-// for (const element of array1) {
-//   console.log(element);
-// }
+const calculateSumAndDiff = (input) => {
+  const {a, b} = input;
+  return {
+    sum: a+b,
+    diff: a-b
+  }
+}
+const object = calculateSumAndDiff({a: 4, b: 14}) // output object cu 2 key: sum si diff
+const input = {a: 4, b: 14}
+console.log(calculateSumAndDiff(input));
 
-// for (let i=0; i < array1.length; i++) {
-//   const element = array1[i];
-//   console.log(element);
-// }
+// Problemă 2: Inversarea literei mari cu cea mică
+// Scrie o funcție care primește un string și 
+// inversează literele mari cu cele mici și viceversa.
 
-// Slice
-// Array.slice(startIndex, endIndex);
-// startIndex - indexul de la care se va incepe extragerea elementelor
-// endIndex - indexul pana unde se vor extrage elementelor
+const inverseLetters = (str) => {
+  let inversedStr = '';
 
-// const array = ['a', 'b', 'c', 'd', 'e'];
-// 'd', 'e' intersectia cu 'a', 'b', 'c', 'd' ['d']
-// console.log(array.slice(-2, 4)); // ['d']
-
-// no params in slice
-// console.log(array.slice()) // Creaza o copie a array-ului
-// doar startIndex 
-// console.log(array.slice(2)); // Creaza un array nou de la indexul 2 inclusiv
-//['c', 'd', 'e']
-// daca specific startIndex si endIndex
-// creaza un array de la indexul 3 inclusiv si pana la 4, fara de valoarea 4
-// console.log(array.slice(3, 4)); // ['d']
-// valoarea negativa la startIndex, returneaza ultimele valori
-// console.log(array.slice(-2))// returneaza ultimele 2 valori in array
-// ['d', 'e']
-// valoarea negativa la startIndex si endIndex
-// endIndex = array.length = 5
-// endIndex (-2) = array.length - 2 = 3
-// array2 = ['a', 'b', 'c']
-// console.log(array2.slice(1, 3));
-// console.log(array.slice(1, -2)); // ['b', 'c']
-
-// slice sa scriem sub forma de for
-// const sliceArray = (startIndex, endIndex) => {
-//   const array = ['a', 'b', 'c', 'd', 'e'];
-//   const slicedArray = [];
-
-//   for (let i = startIndex; i < endIndex; i++) {
-//     slicedArray.push(array[i]);
-//   }
-//   return slicedArray;
-// }
-
-// console.log(sliceArray(3, 4));
-
-// Problem: Print Odd Numbers
-// Given an array of numbers, write a function
-//  that prints only the odd numbers in the array.
-
-const numbers = [1, 2, 3, 4, 5, 6, 7];
-
-const printOddNumber = (array) => {
-  array.forEach(element => {
-    if (element % 2 !== 0) {
-      console.log("Odd number:" + element);
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    // H, H este egal cu H (.toUpperCase())
+    if(char === char.toUpperCase()) {
+      //1. H
+      //2. e
+      //n !
+      inversedStr += char.toLowerCase();
+    } else {
+      inversedStr += char.toUpperCase();
     }
-  })
+  }
+
+  return inversedStr; // !
 }
 
-// printOddNumber(numbers);
-
-// map 
-const printOddNumber2 = (array) => {
-  return array.map(element => {
-    if (element % 2 !== 0) {
-      return element; // pune in array-ul nou doar numerele impare
-    }
-  }).filter(Boolean);
-}
-
-console.log(printOddNumber2(numbers));
-
-// Reduce 
-
+console.log(inverseLetters('Hello word!'));
