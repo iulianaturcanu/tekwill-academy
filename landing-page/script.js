@@ -1,87 +1,133 @@
-// // Accesing Elements
-// const element = document.getElementById('myElement');
-// // const image = document.getElementsByClassName('image');
-// const image = document.querySelector('.image');
-// const [button] = document.getElementsByClassName('image-button');
+// // Syncronous code
+// const executeTask = () => {
+//   console.log('Begin');
 
-// // Modifying Elements
-
-// const changeBackground = () => {
-//   element.style.backgroundColor = '#e45f34';
-//   // element.textContent = 'New content';
-//   element.innerHTML = `<form class="form-container">
-//                 <input type="text" placeholder="Full Name">
-//                 <input type="email" placeholder="example@gmail.com">
-//                 <select>
-//                     <option value="option1">Option 1</option>
-//                     <option value="option2">Option 2</option>
-//                 </select>
-//                 <select>
-//                     <option value="option3">Option 3</option>
-//                     <option value="option4">Option 4</option>
-//                 </select>
-//                 <input type="text" placeholder="Message">
-//             </form>`;
-//   button.removeAttribute('disabled');
-// }
-
-
-// const showImage = () => {
-//   // console.log(image.style.display);
-//   if (image.style.display === 'none') {
-//     image.style.display = 'block';
-//     button.textContent = 'Hide image';
-//   } else {
-//     image.style.display = 'none';
-//     button.textContent = 'Show image';
-//   }
-// }
-
-// button.addEventListener('click', showImage);
-
-// const form = document.querySelector('.form-container');
-
-// form.addEventListener('submit', (event) => {
-//   // To prevent form submission
-//   event.preventDefault();
-//   const fullNameInput = document.querySelector('.fullName');
-//   const emailInput = document.querySelector('input[type="email"]');
-//   const select1 = document.querySelector('select:nth-of-type(1)');
-//   const select2 = document.querySelector('select:nth-of-type(2)');
-//   const messageInput = document.querySelector('.message-input');
-
-//   if (fullNameInput.value.trim() === '') {
-//     alert('Please enter your name');
-//     emailInput.focus();
+//   for (let i = 0; i < 3; i++) {
+//     console.log('Execute task' + i);
 //   }
 
-//   console.log(fullNameInput.value.trim());
-//   console.log(emailInput.value);
-//   console.log(select1.value);
-//   console.log(select2.value);
-//   console.log(messageInput.value);
-  
-//   form.reset();
-// });
-
-
-// const fetchData = async () => {
-// const url = 'https://restcountries.com/v3.1/all';
-// const options = {
-// 	method: 'GET',
-// };
-
-//   try {
-//     const response = await fetch(url, options);
-//     const result = await response.json();
-//     console.log(result);
-//     if(result) {
-//     document.getElementById("image").innerHTML = "<img src='" + result[0].flags.png + "' alt='Movie Poster' />";
-//     // document.getElementById("release-year").textContent = "Release Year: " + movie.year;
-//     //     document.getElementById("title").textContent = "Title: " + movie.title;
-//   }} catch (error) {
-//     console.error(error);
-//   }
+//   console.log('End');
 // }
 
-// fetchData();
+// // Begin,  Execute task 1, ...
+
+// // executeTask();
+// // Begin
+// // Execute task0
+// // Execute task1
+// // Execute task2
+// // End
+
+// // Asyncronous code
+// const executeTask2 = () => {
+//   console.log('Begin');
+
+//   // Asyncron
+//   // Pornim timerul 2sec 
+//   // loading
+//   setTimeout(() => {
+//     console.log('Finish asyncron task');
+//   }, 2000);
+
+//   console.log('End');
+// }
+
+// executeTask2();
+
+// const img = document.querySelector('.vector2');
+// // asyncron
+// img.src = 'img/bg-appointment.png';
+// img.addEventListener('load', () => {
+//   img.classList.add('active');
+// })
+// const p = document.querySelector('.description2');
+// p.style.width = '30px';
+
+// // HTTP Request
+// // 1. Get - pentru a obtie datele de la un server (backend). Nu modifciarea datele sursei
+// // get /countries - primim toate datele despre countries
+// // 2. Post - pentru a trimite datele de pe frontend (client side) catre un server 
+// // post /note - punem in baza de date o notita noua 
+// // 3. Put - pentru a face update la careva date din server
+// // 4. Delete - pentru a sterge careva date de pe server
+// // 5. Patch - face update la careva date. modificari mai spefice decat PUT 
+
+// // API call - interactiunea intre software si un serviciu 
+// // trimiti un reuqest catre un api endpoint si te astepti raspuns 
+// // microservicii - backend
+// // microservicii - frontend
+// // backend - frontend
+
+// // HTTP request - hypertext transfer protocol 
+// // defineste cum se trimit si cum ele formatate 
+
+// // api call invoca http request
+
+// // Callback hell
+// const doSomething = (callback) => {
+//   setTimeout(() => {
+//     callback();
+//   }, 1000)
+// }
+
+// const doSomethingElse = (callback) => {
+//   setTimeout(() => {
+//     callback();
+//   }, 1000)
+// }
+
+// const doSomethingMore = (callback) => {
+//   setTimeout(() => {
+//     callback();
+//   }, 1000)
+// }
+
+// doSomething(() => doSomethingElse(() => doSomethingMore(()=> console.log('finish'))));
+
+// // Promise
+// // .then()
+// // .catch() 
+
+// doSomething().then(() => doSomethingElse()).then(() => doSomethingMore()).catch((errors)=>{console.log(errors)})
+
+// async function logJSONData() {
+//   const response = await fetch("http://example.com/movies.json");
+//   const jsonData = await response.json();
+//   console.log(jsonData);
+// }
+
+const createCountryContainer = (country) => {
+  const container = document.createElement('div');
+  container.className = 'country-container';
+  container.id = 'country-details';
+
+  const flagImg = document.createElement("img");
+  flagImg.setAttribute('src', country.flags.png);
+  flagImg.setAttribute('alt', country.flags.alt);
+  container.appendChild(flagImg);
+
+  const name = document.createElement("h2");
+  name.textContent = 'Name: ' + country.name.common;
+  container.appendChild(name);
+
+  const population = document.createElement("h5");
+  population.textContent = 'Population: ' + country.population;
+  container.appendChild(population);
+
+  return container;
+}
+
+const fetchData = () => {
+  fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(countries => {
+    countries.forEach(country => {
+      const countriesContainer = document.getElementById('countries');
+      const countryContainer = createCountryContainer(country);
+      countriesContainer.appendChild(countryContainer);
+    })
+  })
+  .catch(error => console.log(error));
+}
+
+fetchData();
