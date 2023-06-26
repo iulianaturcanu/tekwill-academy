@@ -1,0 +1,111 @@
+/* Resetarea stilurilor implicite */
+body, div, h2, h5, img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+#countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.country-container {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+}
+
+.country-container img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.country-container h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.country-container h5 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.country-container p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.country-container p strong {
+  font-weight: bold;
+}
+
+.country-container p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Styling for search input and button */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.search-container input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.search-container button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-container input[type="text"]:focus-visible,
+select:focus-visible {
+    outline: none;
+}
+
+.search-container button:hover {
+  background-color: #45a049;
+}
+
+/* Styles for select dropdown */
+select {
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #888;
+}
