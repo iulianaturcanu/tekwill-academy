@@ -35,6 +35,54 @@
    .card-item p {
     font-size: 16px;
    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        background: url(https://i.postimg.cc/qq7WKZ1m/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .menu-toggle.active {
+        width: 40px;
+        height: 40px;
+        background: url(https://i.postimg.cc/yNcK65Gc/close.png);
+        background-size: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .main-nav .center {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-nav .nav-links {
+        display: none;
+    }
+
+    .main-nav .nav-links.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        left: 0;
+        top: 90px;
+        position: fixed;
+        background: white;
+        width: 100%;
+        height: calc(100% - 90px);
+    }
+
+    .main-nav .nav-links.active .main-nav-link {
+        color: black;
+    }
 }
 
 @media (max-width: 480px) {

@@ -34,12 +34,14 @@ body {
 }
 
 .main-header {
-  /* Centreaza elementele la mijlloc pe verticala si orizontala */
+  color: #fff;
+  height: auto;
+}
+
+.main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
-  height: auto;
 }
 
 .containers {
@@ -183,4 +185,15 @@ body {
   font-size: 14px;
   font-weight: 700;
   color: var(--light-text-color);
+}
+
+#modal {
+  display: none;
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
 }

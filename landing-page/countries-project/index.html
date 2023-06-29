@@ -9,13 +9,17 @@
 
 <body>
     <div class="search-container">
+        <button onclick="fetchData()">Show all</button>
         <input type="text" id="search-input" placeholder="Enter country name">
         <button id="search-button">Search</button>
-        <select id="sort-select">
-            <option value="name">Sort by Name</option>
-            <option value="population">Sort by Population</option>
-            <option value="area">Sort by Area</option>
-        </select>
+        <div class="dropdown" onclick="toggleMenu()">
+            <select id="sort-select">
+                <option value="name">Sort by Name</option>
+                <option value="population">Sort by Population</option>
+                <option value="area">Sort by Area</option>
+                <option value="currency">Sort by Currency</option>
+            </select>
+        </div>
     </div>
     <div id="countries"></div>
     <script src="script.js"></script>

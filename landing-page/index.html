@@ -4,26 +4,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
-    <!-- <link href="menu.css" rel="stylesheet" /> -->
     <link href="queries.css" rel="stylesheet" />
-    <!-- <script>
-        let variable = 'Hello World';
-        if (variable === 'Hello World') alert('Hello World');
-    </script> -->
-
     <title>The Basic Language of the Web: HTML</title>
 </head>
 
 <body>
     <header class="main-header box-container">
-        <h1>KMarketer</h1>
         <nav class="main-nav">
-            <!-- <input type="checkbox" class="toggle">
-            <div class="hamburger">
-                <div></div>
+            <div class="center">
+                <h1>KMarketer</h1>
+                <div class="menu-toggle" onclick="toggleMenu()"></div>
             </div>
-            <div class="menu"> -->
-            <ul>
+            <ul class="nav-links">
                 <li>
                     <a href="countries-project/index.html" class="main-nav-link">About</a>
                 </li>
@@ -133,6 +125,14 @@
         <div class="box-container">
             <h5>Contact us</h5>
             <h2>Make an Appointment</h2>
+            <a href="#" id="open-modal">Open modal window</a>
+
+            <div id="modal">
+                <h3>Modal Window</h3>
+                <p>Here is the content of the modal</p>
+                <button id="close-modal">Close modal</button>
+            </div>
+            <br />
             <form class="form-container">
                 <input type="text" placeholder="Full Name" class="fullName">
                 <input type="email" placeholder="example@gmail.com">
@@ -151,6 +151,7 @@
             </form>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 
 </html>

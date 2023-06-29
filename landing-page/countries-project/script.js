@@ -36,6 +36,7 @@ const createCountryContainer = (country) => {
 
   return container;
 }
+
 let countriesList = [];
 
 const fetchData = () => {
@@ -75,6 +76,16 @@ searchButton.addEventListener('click', () => {
   const searchName = searchInput.value.trim();
   if (searchName !== '') {
     searchCountry(searchName);
+  } else {
+    fetchData();
+  }
+});
+
+searchButton.addEventListener('keydown', (event) => {
+  console.log('Key:' + event.key);
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    searchButton.click();
   }
 });
 
@@ -83,6 +94,7 @@ const SortOptions = {
   NAME: 'name',
   POPULATION: 'population',
   AREA: 'area',
+  CURRENCY: 'currency'
 };
 
 // Sort countries based on the selected parameter
@@ -96,6 +108,14 @@ const sortCountries = (sortParam) => {
         );
     case SortOptions.AREA:
       return countriesList.sort((a, b) => b.area - a.area);
+    case SortOptions.CURRENCY:
+      return countriesList.sort((a, b) => {
+        if(a.currencies && b.currencies) {
+          const currencyCodeA = Object.keys(a.currencies)[0];
+          const currencyCodeB = Object.keys(b.currencies)[0];
+          return currencyCodeA.localeCompare(currencyCodeB);
+        }
+      });
     case SortOptions.NAME:
     default:
       return countriesList.sort((a, b) => a.name.common.localeCompare(b.name.common));
@@ -108,7 +128,6 @@ const updateCountries = (sortParam) => {
   countriesContainer.innerHTML = ''; // Clear existing country containers
 
   const sortedCountries = sortCountries(sortParam);
-  console.log(sortedCountries)
   sortedCountries.forEach(country => {
     const countryContainer = createCountryContainer(country);
     countriesContainer.appendChild(countryContainer);
@@ -121,3 +140,8 @@ sortSelect.addEventListener('change', () => {
   const sortParam = sortSelect.value;
   updateCountries(sortParam);
 });
+
+const toggleMenu = () => {
+    const menuToggle = document.querySelector('.dropdown');
+    menuToggle.classList.toggle('closed');
+}
