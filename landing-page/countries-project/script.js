@@ -124,14 +124,16 @@ const sortCountries = (sortParam) => {
 
 // Function to update the countries container with sorted countries
 const updateCountries = (sortParam) => {
-  const countriesContainer = document.getElementById('countries');
-  countriesContainer.innerHTML = ''; // Clear existing country containers
-
-  const sortedCountries = sortCountries(sortParam);
-  sortedCountries.forEach(country => {
-    const countryContainer = createCountryContainer(country);
-    countriesContainer.appendChild(countryContainer);
-  });
+  // if (typeof sortParam === String) {
+    const countriesContainer = document.getElementById('countries');
+    countriesContainer.innerHTML = ''; // Clear existing country containers
+  
+    const sortedCountries = sortCountries(sortParam);
+    sortedCountries.forEach(country => {
+      const countryContainer = createCountryContainer(country);
+      countriesContainer.appendChild(countryContainer);
+    });
+  // }
 };
 
 // Get sort select element and add event listener
@@ -145,3 +147,26 @@ const toggleMenu = () => {
     const menuToggle = document.querySelector('.dropdown');
     menuToggle.classList.toggle('closed');
 }
+
+const animateElement = (element, duration) => {
+  let position = 0;
+  // distanta totala de miscare in pixeli
+  const distance = 100;
+  const step = distance / duration; // 10px
+
+  // 0 10 20 30 ... 100
+  const move = () => {
+    position += step;
+    element.style.transform = `translateX(${position}px)`;
+    if (position < distance) {
+      setTimeout(move, 10);
+    }
+  }
+
+  move();
+};
+
+window.addEventListener('load', () => {
+  const image = document.querySelector('.country-container img');
+  animateElement(image, 100);
+})

@@ -40,3 +40,16 @@ openModal.addEventListener('click', (event) => {
 closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
 })
+
+const changeBackgroundColor = () => {
+    const colors = ['red', 'black', 'green', 'yellow', 'orange'];
+    let index = 0;
+
+    return () => {
+        // document.body.style.backgroundColor = colors[index];
+         document.body.style.background = `linear-gradient(to bottom, ${colors[index]} 0%, ${colors[index]} 50%, red 50%, red 100%)`;
+        index = (index + 1)% colors.length;
+    }
+}
+
+setInterval(changeBackgroundColor(), 2000);
