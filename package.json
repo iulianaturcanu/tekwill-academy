@@ -1,0 +1,26 @@
+{
+  "name": "tekwill_academy",
+  "version": "1.0.0",
+  "description": "Acest proiect este un exemplu de utilizare a sintaxei Markdown.",
+  "main": "/landing-page/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx parcel landing-page/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iulianaturcanu/tekwill-academy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iulianaturcanu/tekwill-academy/issues"
+  },
+  "homepage": "https://github.com/iulianaturcanu/tekwill-academy#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}

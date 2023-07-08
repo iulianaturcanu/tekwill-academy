@@ -1,41 +1,23 @@
-const createCountryContainer = (country) => {
-  const container = document.createElement('div');
-  container.className = 'country-container';
-  container.id = 'country-details';
+import { ENTER_KEY} from './search.js';
+import createCountryContainer from './createCountryContainer.js';
+// import { clonesDeep } from 'lodash';
 
-  const flagImg = document.createElement("img");
-  flagImg.setAttribute('src', country.flags.png);
-  flagImg.setAttribute('alt', country.flags.alt);
-  container.appendChild(flagImg);
+// const state = {
+//   shoppingCart: {product: 'bread', quantity: 5},
+// }
 
-  const name = document.createElement("h2");
-  name.textContent = 'Name: ' + country.name.common;
-  container.appendChild(name);
+// const copyState = Object.assign({}, state);
 
-  const population = document.createElement("h5");
-  population.textContent = 'Population: ' + country.population;
-  container.appendChild(population);
+// const cloneDeepState = cloneDeep(state);
 
-  if (country.currencies) {
-    const currencyKeys = Object.keys(country.currencies);
-    const currencyCode = currencyKeys[0];
-    const currency = country.currencies[currencyCode];
-    const currencyElement = document.createElement("p");
-    currencyElement.textContent = `Currency: ${currencyCode} - ${currency.name} (${currency.symbol})`;
-    container.appendChild(currencyElement);
-  }
-  if (country.capital) {
-    const capital = document.createElement("p");
-    capital.textContent = "Capital: " + country.capital[0];
-    container.appendChild(capital);
-  }
+// state.shoppingCart.quantity = 7;
+// console.log(copyState, cloneDeepState)
 
-  const continent = document.createElement("p");
-  continent.textContent = "Continent: " + country.continents[0];
-  container.appendChild(continent);
+import oriceNumeDorit from 'module.js';
 
-  return container;
-}
+
+
+
 
 let countriesList = [];
 
@@ -54,40 +36,6 @@ const fetchData = () => {
 }
 
 fetchData();
-
-const searchCountry = (searchName) => {
-  const url = `https://restcountries.com/v3.1/name/${searchName}`;
-  fetch(url)
-    .then(response => response.json())
-    .then(countries => {
-      const countriesContainer = document.getElementById('countries');
-      countriesContainer.innerHTML = ''; // Clear existing country containers
-      countries.forEach(country => {
-        const countryContainer = createCountryContainer(country);
-        countriesContainer.appendChild(countryContainer);
-      });
-    })
-    .catch(error => console.log(error));
-}
-
-const searchButton = document.getElementById('search-button');
-searchButton.addEventListener('click', () => {
-  const searchInput = document.getElementById('search-input');
-  const searchName = searchInput.value.trim();
-  if (searchName !== '') {
-    searchCountry(searchName);
-  } else {
-    fetchData();
-  }
-});
-
-searchButton.addEventListener('keydown', (event) => {
-  console.log('Key:' + event.key);
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    searchButton.click();
-  }
-});
 
 // Sort options
 const SortOptions = {
@@ -143,6 +91,13 @@ sortSelect.addEventListener('change', () => {
   updateCountries(sortParam);
 });
 
+// sortSelect.addEventListener('keydown', (event) => {
+//   if (event.key === ENTER_KEY) {
+//     event.preventDefault();
+//     updateCountries(sortParam);
+//   }
+// });
+
 const toggleMenu = () => {
     const menuToggle = document.querySelector('.dropdown');
     menuToggle.classList.toggle('closed');
@@ -166,7 +121,11 @@ const animateElement = (element, duration) => {
   move();
 };
 
-window.addEventListener('load', () => {
-  const image = document.querySelector('.country-container img');
-  animateElement(image, 100);
-})
+// window.addEventListener('load', () => {
+//   const image = document.querySelector('.country-container img');
+//   animateElement(image, 100);
+// })
+
+window.toggleMenu=toggleMenu;
+window.fetchData=fetchData;
+

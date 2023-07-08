@@ -52,4 +52,4 @@ const changeBackgroundColor = () => {
     }
 }
 
-setInterval(changeBackgroundColor(), 2000);
+// setInterval(changeBackgroundColor(), 2000);
