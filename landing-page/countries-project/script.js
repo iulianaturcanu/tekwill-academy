@@ -1,23 +1,6 @@
 import { ENTER_KEY} from './search.js';
 import createCountryContainer from './createCountryContainer.js';
-// import { clonesDeep } from 'lodash';
-
-// const state = {
-//   shoppingCart: {product: 'bread', quantity: 5},
-// }
-
-// const copyState = Object.assign({}, state);
-
-// const cloneDeepState = cloneDeep(state);
-
-// state.shoppingCart.quantity = 7;
-// console.log(copyState, cloneDeepState)
-
-import oriceNumeDorit from 'module.js';
-
-
-
-
+import  './regex.js';
 
 let countriesList = [];
 

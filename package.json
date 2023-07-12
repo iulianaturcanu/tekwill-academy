@@ -5,7 +5,9 @@
   "main": "/landing-page/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel landing-page/index.html"
+    "start": "npx parcel landing-page/index.html",
+    "compile-sass": "npx sass landing-page/sass/input.scss landing-page/sass/input.css",
+    "start-sass": "npm run compile-sass && npm run start"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,8 @@
   },
   "homepage": "https://github.com/iulianaturcanu/tekwill-academy#readme",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "sass": "^1.63.6"
   },
   "devDependencies": {
     "parcel": "^2.9.3"

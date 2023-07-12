@@ -1,0 +1,212 @@
+/* SASS - extinde css */
+@import '../colors.scss';
+
+@mixin box-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+// @mixin display-center {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// scss => css 
+body {
+  margin: 0px;
+  background: linear-gradient(
+    to bottom,
+    rgba(67, 116, 67, 0.425) 0%,
+    rgba(67, 116, 67, 0.425) 50%,
+    rgba(145, 88, 145, 0.653) 50%,
+    rgba(145, 88, 145, 0.653) 100%
+  );
+}
+
+.main-header {
+  @include box-container;
+  color: #fff;
+  height: auto;
+
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em;
+    padding: 1em;
+    
+    ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    }
+
+    .main-nav-link:link {
+    text-decoration: none;
+    }
+
+    .main-nav-link {
+      color: #fff;
+    }
+  }
+}
+
+.containers {
+  @include box-container;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 32px;
+
+  div {
+    background-color: $light-text-color;
+    color: black;
+
+    p {
+      color: #737373;
+      text-align: inherit;
+    }
+  }
+
+  .card-item {
+    padding: 40px;
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+}
+
+.values-section {
+  @include box-container;
+  margin: 100px auto;
+  display: grid;
+  justify-content: center;
+  align-content: end;
+
+  h2, p {
+    text-align: center;
+    color: $light-text-color;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .values-text {
+    max-width: 472px;
+    margin: 45px auto;
+  }
+}
+
+.main-content {
+  @include box-container;
+  color: $light-text-color;
+  padding: 40px 140px;
+  gap: 40px;
+  max-width: 572px;
+  margin: 0 auto;
+
+  .heading-primary {
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  h4 {
+    margin: 40px 0;
+    text-align: center;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  button {
+    width: 185px;
+    height: 48px;
+    border-radius: 36px;
+    color: #fff;
+  }
+
+  button:first-child {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+
+  button:last-child {
+    background: transparent;
+    border: 1px solid #FFFFFF;
+  }
+}
+
+.value-container {
+  background-color: greenyellow;
+  color: black;
+}
+
+.form-section {
+  padding: 100px 0;
+  background-image: url(../img/bg-appointment.png);
+  background-size: cover;
+  width: 100%;
+ 
+  .box-container {
+    @include box-container;
+  }
+
+  .form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 50px);
+    gap: 20px;
+
+    * {
+      background-color: $light-text-color;
+      border-radius: 4px;
+    }
+
+    input:last-child {
+      /* row-start / column-start / row-end / column-end */
+        grid-area: 3 / 1 / 5 / 3;
+    }
+  }
+
+  h2 {
+    font-size: 40px;
+    color: $light-text-color;
+  } 
+
+  h5 {
+    color: $light-text-color;
+  }
+
+  .submit-button {
+    width: 218px;
+    height: 58px;
+    border-radius: 5px;
+    margin-top: 40px;
+    background-color: $primary-color;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: $light-text-color;
+  }
+}
+
+#modal {
+  display: none;
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: $light-text-color;
+}

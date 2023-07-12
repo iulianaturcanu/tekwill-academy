@@ -1,79 +1,54 @@
 /* SASS - extinde css */
-
-:root {
-  --primary-color: #FFA62B;
-  --dark-barckground-color: #252B42;
-  --light-text-color: #FFFFFF;
-}
-
 body {
   margin: 0px;
-  background: linear-gradient(
-    to bottom,
-    rgba(67, 116, 67, 0.425) 0%,
-    rgba(67, 116, 67, 0.425) 50%,
-    rgba(145, 88, 145, 0.653) 50%,
-    rgba(145, 88, 145, 0.653) 100%
-  );
+  background: linear-gradient(to bottom, rgba(67, 116, 67, 0.425) 0%, rgba(67, 116, 67, 0.425) 50%, rgba(145, 88, 145, 0.653) 50%, rgba(145, 88, 145, 0.653) 100%);
 }
 
-.main-nav {
+.main-header {
+  margin: 0 auto;
+  max-width: 1000px;
+  color: #fff;
+  height: auto;
+}
+.main-header .main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 2em;
   padding: 1em;
 }
-
-.main-nav ul {
+.main-header .main-nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
-
-.main-nav-link:link {
+.main-header .main-nav .main-nav-link:link {
   text-decoration: none;
 }
-
-.main-nav-link {
+.main-header .main-nav .main-nav-link {
   color: #fff;
-}
-
-.box-container {
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
-.main-header {
-  color: #fff;
-  height: auto;
-}
-
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .containers {
+  margin: 0 auto;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 32px;
 }
-
 .containers div {
-  background-color: var(--light-text-color);
+  background-color: #FFFFFF;
   color: black;
 }
-
 .containers div p {
   color: #737373;
   text-align: inherit;
 }
-
-.card-item {
+.containers .card-item {
   padding: 40px;
 }
-
-.flex-row {
+.containers .card-item .flex-row {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -81,65 +56,59 @@ body {
 }
 
 .values-section {
+  margin: 0 auto;
+  max-width: 1000px;
   margin: 100px auto;
   display: grid;
   justify-content: center;
   align-content: end;
 }
-
-.values-section h2,
-.values-section p {
+.values-section h2, .values-section p {
   text-align: center;
-  color: var(--light-text-color);
+  color: #FFFFFF;
 }
-
 .values-section h2 {
   font-size: 40px;
 }
-
-.values-text {
+.values-section .values-text {
   max-width: 472px;
   margin: 45px auto;
 }
 
 .main-content {
-    color: var(--light-text-color);
-    padding: 40px 140px;
-    gap: 40px;
-    max-width: 572px;
-    margin: 0 auto;
+  margin: 0 auto;
+  max-width: 1000px;
+  color: #FFFFFF;
+  padding: 40px 140px;
+  gap: 40px;
+  max-width: 572px;
+  margin: 0 auto;
 }
-
 .main-content .heading-primary {
   font-size: 3.5rem;
   text-align: center;
   margin: 0;
 }
-
 .main-content h4 {
   margin: 40px 0;
   text-align: center;
 }
-
 
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 12px;
 }
-
 .cta-buttons button {
   width: 185px;
   height: 48px;
   border-radius: 36px;
   color: #fff;
 }
-
 .cta-buttons button:first-child {
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background-color: #FFA62B;
+  border: 1px solid #FFA62B;
 }
-
 .cta-buttons button:last-child {
   background: transparent;
   border: 1px solid #FFFFFF;
@@ -152,47 +121,45 @@ body {
 
 .form-section {
   padding: 100px 0;
-  background-image: url(img/bg-appointment.png);
+  background-image: url(../img/bg-appointment.png);
   background-size: cover;
   width: 100%;
 }
-
-.form-container {
+.form-section .box-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.form-section .form-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 50px);
   gap: 20px;
 }
-
-.form-container * {
-  background-color: white;
+.form-section .form-container * {
+  background-color: #FFFFFF;
   border-radius: 4px;
 }
-
-.form-container input:last-child {
+.form-section .form-container input:last-child {
   /* row-start / column-start / row-end / column-end */
-    grid-area: 3 / 1 / 5 / 3;
+  grid-area: 3/1/5/3;
 }
-
 .form-section h2 {
   font-size: 40px;
-  color: var(--light-text-color);
-} 
-
-.form-section h5 {
-  color: var(--light-text-color);
+  color: #FFFFFF;
 }
-
+.form-section h5 {
+  color: #FFFFFF;
+}
 .form-section .submit-button {
   width: 218px;
   height: 58px;
   border-radius: 5px;
   margin-top: 40px;
-  background-color: var(--primary-color);
+  background-color: #FFA62B;
   border: none;
   font-size: 14px;
   font-weight: 700;
-  color: var(--light-text-color);
+  color: #FFFFFF;
 }
 
 #modal {
@@ -203,5 +170,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: white;
+  background-color: #FFFFFF;
 }
+
+/*# sourceMappingURL=input.css.map */
